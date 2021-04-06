@@ -8,6 +8,7 @@ const index = (req, res) => {
     .findAndCountAll({
       offset: parseInt(offset),
       limit: parseInt(limit),
+      order: [["createdAt", "DESC"]],
     })
     .then((result) => {
       if (result.count) {
